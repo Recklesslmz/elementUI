@@ -1,0 +1,51 @@
+<template>
+  <div class="leftMenu">
+    <el-menu :default-active="onRoutes" theme="dark" class="el-menu-vertical-demo" @open="handleOpen"
+             @close="handleClose" router>
+      <el-menu-item index="readme"><i class="el-icon-edit"></i>关于我</el-menu-item>
+      <el-menu-item index="basetable"><i class="el-icon-message"></i>基础表格</el-menu-item>
+      <el-menu-item index="3"><i class="el-icon-date"></i>标签</el-menu-item>
+      <el-menu-item index="4"><i class="el-icon-menu"></i>进度条</el-menu-item>
+      <el-menu-item index="5"><i class="el-icon-loading"></i>加载</el-menu-item>
+      <el-menu-item index="6"><i class="el-icon-view"></i>消息提示</el-menu-item>
+      <el-menu-item index="2"><i class="el-icon-star-off"></i>评分</el-menu-item>
+      <el-menu-item index="7"><i class="el-icon-star-on"></i>通知</el-menu-item>
+    </el-menu>
+  </div>
+</template>
+
+<script type="text/ecmascript-6">
+  export default{
+    methods: {
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    },
+    computed: {
+      onRoutes(){
+        return this.$route.path.replace('/', '');
+      }
+    }
+  }
+
+</script>
+<style lang="scss">
+  .leftMenu {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    top: 60px;
+    width: 150px;
+    left: 0;
+    ul {
+      height: 100%;
+    }
+    .nav-left {
+
+    }
+  }
+
+</style>
