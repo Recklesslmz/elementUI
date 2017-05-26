@@ -2,9 +2,9 @@
   <div class="leftMenu">
     <el-menu :default-active="onRoutes" theme="dark" class="el-menu-vertical-demo" @open="handleOpen"
              @close="handleClose" router>
-      <el-menu-item index="readme"><i class="el-icon-edit"></i>关于我</el-menu-item>
+      <el-menu-item index="resume"><i class="el-icon-edit"></i>关于我</el-menu-item>
       <el-menu-item index="basetable"><i class="el-icon-message"></i>基础表格</el-menu-item>
-      <el-menu-item index="3"><i class="el-icon-date"></i>标签</el-menu-item>
+      <el-menu-item index="charts"><i class="el-icon-date"></i>图表</el-menu-item>
       <el-menu-item index="4"><i class="el-icon-menu"></i>进度条</el-menu-item>
       <el-menu-item index="5"><i class="el-icon-loading"></i>加载</el-menu-item>
       <el-menu-item index="6"><i class="el-icon-view"></i>消息提示</el-menu-item>
@@ -35,7 +35,7 @@
 <style lang="scss">
   .leftMenu {
     display: block;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     top: 60px;
     width: 190px;
