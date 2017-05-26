@@ -38,13 +38,11 @@
     position: absolute;
     bottom: 0;
     top: 60px;
-    width: 150px;
+    width: 190px;
     left: 0;
     ul {
       height: 100%;
-    }
-    .nav-left {
-
+      border-radius: 0;
     }
   }
 

@@ -32,7 +32,7 @@
   .home{
     .content{
       position: absolute;
-      left:150px;
+      left:190px;
       width: 85%;
     }
 
