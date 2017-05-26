@@ -1,6 +1,6 @@
 # elementUI
 
-> vue + vue-cli + elementUI
+> vue + vue-cli + elementUI + vue-charts
 
 ## Build Setup
 
