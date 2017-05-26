@@ -5,7 +5,7 @@
       <el-menu-item index="resume"><i class="el-icon-edit"></i>关于我</el-menu-item>
       <el-menu-item index="basetable"><i class="el-icon-message"></i>基础表格</el-menu-item>
       <el-menu-item index="charts"><i class="el-icon-date"></i>图表</el-menu-item>
-      <el-menu-item index="4"><i class="el-icon-menu"></i>进度条</el-menu-item>
+      <el-menu-item index="register"><i class="el-icon-menu"></i>注册</el-menu-item>
       <el-menu-item index="5"><i class="el-icon-loading"></i>加载</el-menu-item>
       <el-menu-item index="6"><i class="el-icon-view"></i>消息提示</el-menu-item>
       <el-menu-item index="2"><i class="el-icon-star-off"></i>评分</el-menu-item>

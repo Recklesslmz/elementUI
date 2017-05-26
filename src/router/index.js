@@ -5,6 +5,7 @@ import home from  '../pages/home.vue'
 import resume from '../components/resume.vue'
 import basetable from '../pages/basetable.vue'
 import charts from '../components/charts.vue'
+import register from '../pages/register.vue'
 
 Vue.use(Router)
 
@@ -26,6 +27,10 @@ export default new Router({
         {
           path: '/charts',
           component: charts
+        },
+        {
+          path: '/register',
+          component: register
         }
       ]
     }
