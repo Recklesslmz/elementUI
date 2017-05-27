@@ -42,6 +42,8 @@
       left: 200px;
       top:70px;
       width: 85%;
+      /*overflow: hidden;*/
+      /*overflow-y: scroll;*/
     }
 
   }

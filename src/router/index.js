@@ -13,23 +13,27 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      redirect: '/home',
       component: home,
       children: [
         {
-          path: '/resume',
-          component: resume
+          path: '/home/',
+          redirect: '/home/resume',
+          component: resume,
+          children: [{
+            path: '/home/resume/',
+          }]
         },
         {
-          path: '/basetable',
+          path: '/home/basetable',
           component: basetable
         },
         {
-          path: '/charts',
+          path: '/home/charts',
           component: charts
         },
         {
-          path: '/register',
+          path: '/home/register',
           component: register
         }
       ]

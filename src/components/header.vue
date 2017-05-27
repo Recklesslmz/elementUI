@@ -1,7 +1,7 @@
 <template>
   <div class="header">
 
-    <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+    <el-menu theme="dark" class="el-menu-demo" mode="horizontal" @select="handleSelect">
       <div class="logo">
         <svg width="146px" height="38px" viewBox="0 0 146 38" version="1.1" xmlns="http://www.w3.org/2000/svg"
              xmlns:xlink="http://www.w3.org/1999/xlink">
