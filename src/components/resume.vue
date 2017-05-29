@@ -6,8 +6,8 @@
       <img src="http://7xufoi.com1.z0.glb.clouddn.com/cuteCat.jpg">
     </div>
     <div class="resu-production">
-      <!--<div class="name">李木子</div>-->
-      <!--<div class="slogan">一只很菜的前端攻城狮</div>-->
+      <div class="name">李木子</div>
+      <div class="slogan">一只很菜的前端攻城狮</div>
       <div class="school">
         <span><img class="img" src="http://oqjgod7s1.bkt.clouddn.com/school.png"> </span>
         南京铁道职业技术学院.软件技术.2015届毕业
@@ -75,6 +75,9 @@
         }
       }
       .slogan {
+        margin:{
+          top:15px;
+        };
         font: {
           size: 20px;
         }
