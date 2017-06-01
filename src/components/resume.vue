@@ -14,10 +14,10 @@
       </div>
       <div class="link">
         <span>
-          <img src="http://oqjgod7s1.bkt.clouddn.com/phone.png">18351816916
+          <img src="http://oqjgod7s1.bkt.clouddn.com/phone.png"><span class="link-common">18351816916</span>
         </span>
         <span>
-          <img src="http://oqjgod7s1.bkt.clouddn.com/google.png">muzi.sunjing@gmail.com
+          <img src="http://oqjgod7s1.bkt.clouddn.com/google.png"><span class="link-common">muzi.sunjing@gmail.com</span>
         </span>
       </div>
       <div class="contact">
@@ -89,6 +89,18 @@
       .link {
         margin-top: 25px;
         color: #111;
+        img{
+          width: 25px;
+          padding: {
+            left: 10px;
+          }
+        }
+        .link-common{
+          @extend .school;
+          padding: {
+            left: 5px;
+          }
+        }
       }
       .contact {
         width: 20%;

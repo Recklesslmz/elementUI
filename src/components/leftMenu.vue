@@ -6,7 +6,7 @@
       <el-menu-item index="/home/basetable"><i class="el-icon-message"></i>基础表格</el-menu-item>
       <el-menu-item index="/home/charts"><i class="el-icon-date"></i>图表</el-menu-item>
       <el-menu-item index="/home/register"><i class="el-icon-menu"></i>注册</el-menu-item>
-      <!--<el-menu-item index="5"><i class="el-icon-loading"></i>加载</el-menu-item>-->
+      <el-menu-item index="/home/mainActive"><i class="el-icon-loading"></i>主页</el-menu-item>
       <!--<el-menu-item index="6"><i class="el-icon-view"></i>消息提示</el-menu-item>-->
       <!--<el-menu-item index="2"><i class="el-icon-star-off"></i>评分</el-menu-item>-->
       <!--<el-menu-item index="7"><i class="el-icon-star-on"></i>通知</el-menu-item>-->

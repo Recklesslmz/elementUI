@@ -18,16 +18,6 @@
           </g>
         </svg>
       </div>
-      <div class="menuSub">
-        <el-menu-item index="1">基本布局</el-menu-item>
-        <el-submenu index="2">
-          <template slot="title">其他</template>
-          <el-menu-item index="2-1">对话框</el-menu-item>
-          <el-menu-item index="2-2">文字提示</el-menu-item>
-          <el-menu-item index="2-3">弹出框</el-menu-item>
-        </el-submenu>
-        <el-menu-item index="3">折叠面板</el-menu-item>
-      </div>
       <el-submenu index="3">
         <template slot="title">Reckless(系统管理员)</template>
         <el-menu-item index="2-1">退出登录</el-menu-item>
