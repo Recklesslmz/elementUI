@@ -1,12 +1,12 @@
 <template>
 <div class="basetable">
   <div class="selectMenu">
-    <el-date-picker v-model="value3" type="datetimerange" placeholder="选择时间范围">
+    <el-date-picker v-model="value6" type="daterange" placeholder="选择日期范围">
     </el-date-picker>
   </div>
-  <div>
+  <!-- <div>
     <el-button @click='showTime'>显示时间</el-button>
-  </div>
+  </div> -->
   <div class="tableMain">
     <el-table :data="tableData" style="width: 100%">
       <el-table-column prop="date" label="日期" width="180">
@@ -32,15 +32,24 @@
     <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage3" :page-size="100" layout="prev, pager, next, jumper" :total="1000">
     </el-pagination>
   </div>
-  <el-dialog title="收货地址" :visible.sync="dialogFormVisible">
+  <el-dialog title="用户信息" :visible.sync="dialogFormVisible">
     <el-form :model="form">
-      <el-form-item label="活动名称" :label-width="formLabelWidth">
-        <el-input v-model="form.name" auto-complete="off"></el-input>
+      <el-form-item label="地址" :label-width="formLabelWidth">
+        <el-input v-model="form.address" auto-complete="off"></el-input>
       </el-form-item>
-      <el-form-item label="活动区域" :label-width="formLabelWidth">
-        <el-select v-model="form.region" placeholder="请选择活动区域">
-          <el-option label="区域一" value="shanghai"></el-option>
-          <el-option label="区域二" value="beijing"></el-option>
+      <el-form-item label="姓名" :label-width="formLabelWidth">
+        <el-input v-model="form.name" auto-complete="off"></el-input>
+        </el-date-picker>
+      </el-form-item>
+      <el-form-item label="日期" :label-width="formLabelWidth">
+        <el-date-picker v-model="form.date" type="date" placeholder="选择日期">
+        </el-date-picker>
+      </el-form-item>
+
+      <el-form-item label="性别" :label-width="formLabelWidth">
+        <el-select v-model="form.region" placeholder="性别">
+          <el-option label="男" value="男"></el-option>
+          <el-option label="女" value="女"></el-option>
         </el-select>
       </el-form-item>
     </el-form>
@@ -58,57 +67,50 @@ export default {
     return {
       tableData: [{
         date: '2017-05-01',
-        name: '李木子',
-        address: '南京市建邺区梦都大街50号上海非码网络科技有限公司'
+        name: '士兵76',
+        region: '男',
+        address: '国王大道'
       }, {
         date: '2017-05-02',
-        name: '李木子',
-        address: '南京市建邺区梦都大街50号上海非码网络科技有限公司'
+        name: '源氏',
+        region: '男',
+        address: '尼泊尔'
       }, {
         date: '2017-05-03',
-        name: '李木子',
-        address: '南京市建邺区梦都大街50号上海非码网络科技有限公司'
+        name: '黑百合',
+        region: '女',
+        address: '沃斯卡亚工业区'
       }, {
         date: '2017-05-04',
-        name: '李木子',
-        address: '南京市建邺区梦都大街50号上海非码网络科技有限公司'
-      }],
-      gridData: [{
-         date: '2016-05-02',
-         name: '王小虎',
-         address: '上海市普陀区金沙江路 1518 弄'
-       }, {
-         date: '2016-05-04',
-         name: '王小虎',
-         address: '上海市普陀区金沙江路 1518 弄'
-       }, {
-         date: '2016-05-01',
-         name: '王小虎',
-         address: '上海市普陀区金沙江路 1518 弄'
-       }, {
-         date: '2016-05-03',
-         name: '王小虎',
-         address: '上海市普陀区金沙江路 1518 弄'
-       }],
+        name: '猎空',
+        region: '女',
+        address: '国王大道'
+      }, {
+        date: '2017-05-03',
+        name: '查莉娅',
+        region: '女',
+        address: '沃斯卡亚工业区'
+      }, {
+        date: '2017-05-03',
+        name: '禅雅塔',
+        region: '男',
+        address: '尼泊尔'
+      }, {
+        date: '2017-05-03',
+        name: '半藏',
+        region: '女',
+        address: '花村'
+      }, ],
       dialogFormVisible: false,
-      formLabelWidth: '120px',
-      form: {
-         name: '',
-         region: '',
-         date1: '',
-         date2: '',
-         delivery: false,
-         type: [],
-         resource: '',
-         desc: ''
-       },
-      value3: [new Date(2017, 10, 10, 10, 10), new Date(2017, 10, 11, 10, 10)],
+      formLabelWidth: '80px',
+      form: {},
+      value6: '',
       currentPage3: 1,
     }
   },
   methods: {
     showTime() {
-      this.$alert(this.value3, '起止时间', {
+      this.$alert(this.value6, '起止时间', {
         confirmButtonText: '确定',
         callback: action => {
           this.$message({
@@ -120,11 +122,28 @@ export default {
     },
     handleEdit(index, row) {
       console.log(index, row);
-      console.log(this.tableData)
-      this.dialogFormVisible=true
+      console.log(this.tableData[index])
+      this.form = this.tableData[index]
+      this.dialogFormVisible = true
     },
     handleDelete(index, row) {
-      this.tableData.splice(index, 1)
+
+      this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.tableData.splice(index, 1)
+        this.$message({
+          type: 'success',
+          message: '删除成功!'
+        });
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消删除'
+        });
+      });
     },
     handleSizeChange(val) {
       console.log(`每页 ${val} 条`);
