@@ -7,6 +7,7 @@ import basetable from '../pages/basetable.vue'
 import charts from '../components/charts.vue'
 import register from '../pages/register.vue'
 import mainActive from '../pages/mainActive.vue'
+import login from '../pages/login.vue'
 
 Vue.use(Router)
 
@@ -42,6 +43,10 @@ export default new Router({
           component: mainActive
         }
       ]
+    },
+    {
+      path: '/login',
+      component: login
     }
   ]
 })
