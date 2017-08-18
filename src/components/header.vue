@@ -19,8 +19,8 @@
         </svg>
       </div>
       <el-submenu index="3">
-        <template slot="title">Reckless(系统管理员)</template>
-        <el-menu-item index="2-1">退出登录</el-menu-item>
+        <template slot="title">{{username}}(系统管理员)</template>
+        <el-menu-item index="2-1" @click="signOut">退出登录</el-menu-item>
       </el-submenu>
       <!--<div></div>-->
     </el-menu>
@@ -34,12 +34,17 @@
     data(){
       return {
         activeIndex: '1',
+        username: window.localStorage.getItem('username')
       }
     },
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
+      },
+      signOut(){
+        this.$router.push({path: '/'})
       }
+
     }
   }
 
