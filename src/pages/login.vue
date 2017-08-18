@@ -71,7 +71,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("../assets/bg.jpg");
+    background: url("http://oqjgod7s1.bkt.clouddn.com/bg-min.jpg");
     background-size: cover;
     text-align: center;
     font-weight: lighter;
