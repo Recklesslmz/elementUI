@@ -13,5 +13,5 @@ npm run dev
 ```
 
 # 页面预览
-
-<http://recklesslmz.com/elementUI/dist/#/home/resume>
+> 登录界面随意输入用户名密码即可登录
+<http://recklesslmz.com/elementUI/dist/#/>
