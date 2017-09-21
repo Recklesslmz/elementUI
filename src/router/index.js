@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
 import home from  '../pages/home.vue'
 import resume from '../components/resume.vue'
 import basetable from '../pages/basetable.vue'
@@ -8,6 +7,7 @@ import charts from '../components/charts.vue'
 import register from '../pages/register.vue'
 import mainActive from '../pages/mainActive.vue'
 import login from '../pages/login.vue'
+import markdown from '../pages/markdown.vue'
 
 Vue.use(Router)
 
@@ -40,6 +40,10 @@ export default new Router({
         {
           path: '/home/mainActive',
           component: mainActive
+        },
+        {
+          path: '/home/markdown',
+          component: markdown
         }
       ]
     },

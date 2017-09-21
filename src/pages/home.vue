@@ -40,12 +40,14 @@
     .content {
       position: absolute;
       left: 200px;
-      top:70px;
-      width: 85%;
-      /*overflow: hidden;*/
-      /*overflow-y: scroll;*/
+      top: 70px;
+      bottom: 0;
+      overflow: scroll;
+      width: calc(100% - 210px);
     }
-
+    .content::-webkit-scrollbar {
+      display: none;
+    }
   }
 
 </style>

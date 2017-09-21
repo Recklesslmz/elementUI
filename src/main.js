@@ -5,8 +5,19 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import VCharts from 'v-charts'
+import 'highlight.js/styles/tomorrow.css'
+import highlight from 'highlight.js'
 import 'element-ui/lib/theme-default/index.css'
-
+Vue.directive('highlight', (el) => {
+  let codes = el.querySelectorAll('code');
+  let pres = el.querySelectorAll('pre');
+  codes.forEach((codes) => {
+    highlight.highlightBlock(codes)
+  })
+  pres.forEach((pres) => {
+    highlight.highlightBlock(pres)
+  })
+})
 Vue.use(ElementUI)
 Vue.use(VCharts)
 Vue.config.productionTip = false
@@ -16,5 +27,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: {App}
 })
