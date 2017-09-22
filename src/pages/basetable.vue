@@ -4,9 +4,6 @@
       <el-date-picker v-model="value6" type="daterange" placeholder="选择日期范围">
       </el-date-picker>
     </div>
-    <!-- <div>
-      <el-button @click='showTime'>显示时间</el-button>
-    </div> -->
     <div class="tableMain">
       <el-table :data="tableData" style="width: 100%">
         <el-table-column prop="date" label="日期" width="180">

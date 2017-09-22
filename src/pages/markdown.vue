@@ -30,7 +30,6 @@
     },
     computed: {
       compiledMarkdown: function () {
-        console.log(marked(this.input, {sanitize: true}))
         return marked(this.input, {sanitize: true})
       }
     },
