@@ -7,8 +7,7 @@
       <div class="markdown">
         <textarea :value="input" @input="update"></textarea>
       </div>
-      <div class="showState" v-html="compiledMarkdown" v-highlight></div>
-
+      <div class="showState" v-if="compiledMarkdown" v-html="compiledMarkdown" v-highlight></div>
     </div>
   </div>
 </template>
@@ -16,11 +15,12 @@
 <script>
   import _ from 'lodash'
   import marked from 'marked'
-  export default{
-    data(){
+
+  export default {
+    data() {
       return {
         title: '',
-        input: '`PHP is the best language in the world`',
+        input: '# hello',
       }
     },
     methods: {
@@ -30,6 +30,7 @@
     },
     computed: {
       compiledMarkdown: function () {
+        console.log(marked(this.input, {sanitize: true}))
         return marked(this.input, {sanitize: true})
       }
     },
@@ -64,5 +65,4 @@
       background: rgba(191, 203, 217, .1);
     }
   }
-
 </style>

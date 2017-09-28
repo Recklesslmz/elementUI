@@ -2,9 +2,6 @@
 <div class="resume">
   <div class="resu-h">
   </div>
-  <div class="resu-img">
-    <img src="http://oqjgod7s1.bkt.clouddn.com/WechatIMG242.jpeg">
-  </div>
   <div class="resu-production">
     <div class="name">李木子</div>
     <div class="slogan">一只很菜的前端攻城狮</div>

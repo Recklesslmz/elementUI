@@ -1,8 +1,10 @@
 <template>
-  <div class="basetable">
+  <div class="basetable" v-loading="loading"
+       element-loading-text="拼命加载中">
     <div class="selectMenu">
       <el-date-picker v-model="value6" type="daterange" placeholder="选择日期范围">
       </el-date-picker>
+      <el-button type="primary" @click="add">新增</el-button>
     </div>
     <div class="tableMain">
       <el-table :data="tableData" style="width: 100%">
@@ -55,16 +57,19 @@
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="cancel">取 消</el-button>
-        <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+        <el-button type="primary" @click="update">确 定</el-button>
       </div>
     </el-dialog>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import {reformat} from '../common/reformartDate'
+
   export default {
     data() {
       return {
+        loading: true,
         tableData: [{
           date: '2017-05-01',
           name: '士兵76',
@@ -109,6 +114,11 @@
         currentIndex: '',
       }
     },
+    created() {
+      setTimeout(() => {
+        this.loading = false
+      }, 1500)
+    },
     methods: {
       showTime() {
         this.$alert(this.value6, '起止时间', {
@@ -117,9 +127,23 @@
             this.$message({
               type: 'info',
               message: '已显示'
-            });
+            })
           }
-        });
+        })
+      },
+      add() {
+        this.form = {
+          date: '',
+          name: '',
+          region: '',
+          address: ''
+        }
+        this.dialogFormVisible = true
+      },
+      update() {
+        this.form.date = reformat(this.form.date)
+        this.tableData.push(this.form)
+        this.dialogFormVisible = false
       },
       handleEdit(index, row) {
         this.form = this.tableData[index]
@@ -136,22 +160,22 @@
           this.$message({
             type: 'success',
             message: '删除成功!'
-          });
+          })
         }).catch(() => {
           this.$message({
             type: 'info',
             message: '已取消删除'
-          });
-        });
+          })
+        })
       },
-      cancel(){
+      cancel() {
         this.dialogFormVisible = false
       },
       handleSizeChange(val) {
-        console.log(`每页 ${val} 条`);
+        console.log(`每页 ${val} 条`)
       },
       handleCurrentChange(val) {
-        console.log(`当前页: ${val}`);
+        console.log(`当前页: ${val}`)
       }
     },
   }
@@ -164,14 +188,12 @@
       margin: {
         top: 10px;
       }
-    ;
     }
     .page {
       float: right;
       margin: {
         top: 10px;
       }
-    ;
     }
   }
 </style>
