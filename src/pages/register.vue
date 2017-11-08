@@ -15,9 +15,6 @@
           <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"></el-date-picker>
         </el-col>
       </el-form-item>
-      <el-form-item label="即时配送">
-        <el-switch on-text="" off-text="" v-model="form.delivery"></el-switch>
-      </el-form-item>
       <el-form-item label="学历">
         <el-checkbox-group v-model="form.type">
           <el-checkbox label="博士" name="type"></el-checkbox>
@@ -31,7 +28,7 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit(form)">立即创建</el-button>
-        <el-button>取消</el-button>
+        <el-button @click="cancel">取消</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -39,7 +36,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  export default{
+  export default {
     data() {
       return {
         form: {
@@ -79,15 +76,18 @@
           }
         })
       },
+      cancel() {
+        this.form = {}
+      },
       open(index) {
         console.log(index)
         const h = this.$createElement;
-        switch (index){
+        switch (index) {
           case 1:
             this.$notify({
               title: this.success.title,
               message: h('i', {style: 'color: teal'}, this.success.message),
-              type:'success'
+              type: 'success'
             });
             break
           case 2:
