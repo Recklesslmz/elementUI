@@ -4,10 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import VCharts from 'v-charts'
 import 'highlight.js/styles/tomorrow.css'
+import './common/scss/element-variables.scss'
 import highlight from 'highlight.js'
-import 'element-ui/lib/theme-default/index.css'
+
 Vue.directive('highlight', (el) => {
   let codes = el.querySelectorAll('code');
   let pres = el.querySelectorAll('pre');

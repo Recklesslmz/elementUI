@@ -19,10 +19,11 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import header from  '../components/header.vue'
+  import header from '../components/header.vue'
   import leftMenu from '../components/leftMenu.vue'
-  export default{
-    data(){
+
+  export default {
+    data() {
       return {
         show: true
       }
@@ -35,6 +36,8 @@
 
 </script>
 <style lang="scss">
+  @import '../common/scss/element-variables';
+
   $commonColor: '#20a0ff';
   .home {
     .content {
