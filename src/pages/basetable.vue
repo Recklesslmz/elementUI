@@ -107,7 +107,7 @@
           address: '花村'
         },],
         dialogFormVisible: false,
-        formLabelWidth: '80px',
+        formLabelWidth: '81px',
         form: {},
         value6: '',
         currentPage3: 1,
