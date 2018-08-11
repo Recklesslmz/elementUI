@@ -13,7 +13,7 @@ npm run dev
 ```
 # 分支
 > 1.x为 elementUI 1.x版本
-> 2.x为 elementUI 2.x版本
+> 2.x master 为 elementUI 2.x版本
 
 > 代码并无差别主要样式有轻微变化
 

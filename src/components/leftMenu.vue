@@ -2,11 +2,11 @@
   <div class="leftMenu">
     <el-menu :default-active="onRoutes" theme="dark" class="el-menu-vertical-demo" @open="handleOpen"
              @close="handleClose" router>
-      <el-menu-item index="/home/"><i class="el-icon-edit"></i>关于我</el-menu-item>
-      <el-menu-item index="/home/basetable"><i class="el-icon-message"></i>基础表格</el-menu-item>
+      <el-menu-item index="/home/"><i class="el-icon-view"></i>关于我</el-menu-item>
+      <el-menu-item index="/home/basetable"><i class="el-icon-tickets"></i>基础表格</el-menu-item>
       <el-menu-item index="/home/charts"><i class="el-icon-date"></i>图表</el-menu-item>
-      <el-menu-item index="/home/register"><i class="el-icon-menu"></i>注册</el-menu-item>
-      <el-menu-item index="/home/mainActive"><i class="el-icon-minus"></i>主页</el-menu-item>
+      <el-menu-item index="/home/register"><i class="el-icon-plus"></i>注册</el-menu-item>
+      <el-menu-item index="/home/mainActive"><i class="el-icon-menu"></i>主页</el-menu-item>
       <el-menu-item index="/home/markdown"><i class="el-icon-edit"></i>markdown</el-menu-item>
     </el-menu>
   </div>

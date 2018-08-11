@@ -11,6 +11,16 @@
         </el-table-column>
         <el-table-column prop="name" label="姓名" width="180">
         </el-table-column>
+        <el-table-column prop="city" label="城市" width="180">
+          <template scope="scope">
+            <el-select v-model="scope.row.city" placeholder="请选择">
+              <el-option v-for="item in cityList" :key="item.name" :label="item.name" :value="item.name">
+                <!-- <span style="float: left">{{ item.name }}</span> -->
+                <!-- <span style="float: right; color: #8492a6; font-size: 13px">{{ item.name }}</span> -->
+              </el-option>
+            </el-select>
+          </template>
+        </el-table-column>
         <el-table-column prop="address" label="地址">
         </el-table-column>
         <el-table-column label="操作">
@@ -66,38 +76,54 @@ export default {
         date: '2017-05-01',
         name: '士兵76',
         region: '男',
-        address: '国王大道'
+        address: '国王大道',
+        city: ''
+
       }, {
         date: '2017-05-02',
         name: '源氏',
         region: '男',
-        address: '尼泊尔'
+        address: '尼泊尔',
+        city: ''
       }, {
         date: '2017-05-03',
         name: '黑百合',
         region: '女',
-        address: '沃斯卡亚工业区'
+        address: '沃斯卡亚工业区',
+        city: ''
       }, {
         date: '2017-05-04',
         name: '猎空',
         region: '女',
-        address: '国王大道'
+        address: '国王大道',
+        city: ''
       }, {
         date: '2017-05-03',
         name: '查莉娅',
         region: '女',
-        address: '沃斯卡亚工业区'
+        address: '沃斯卡亚工业区',
+        city: ''
       }, {
         date: '2017-05-03',
         name: '禅雅塔',
         region: '男',
-        address: '尼泊尔'
+        address: '尼泊尔',
+        city: ''
       }, {
         date: '2017-05-03',
         name: '半藏',
         region: '女',
-        address: '花村'
+        address: '花村',
+        city: ''
       },],
+      cityList: [
+        { name: '国王大道' },
+        { name: '尼泊尔' },
+        { name: '沃斯卡亚工业区' },
+        { name: '花村' },
+        { name: '尼泊尔' },
+        { name: '月球基地' },
+      ],
       dialogFormVisible: false,
       formLabelWidth: '80px',
       form: {},
